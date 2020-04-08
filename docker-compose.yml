@@ -30,4 +30,5 @@ services:
       depends_on:
         - postgres
       volumes:
-      - ./conf:/tmp/keycloak-conf        
+      - ./conf:/tmp/keycloak-conf
+      - ./rmtheme:/opt/jboss/keycloak/themes/rmtheme

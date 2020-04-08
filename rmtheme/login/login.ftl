@@ -1,0 +1,111 @@
+<#import "template.ftl" as layout>
+<@layout.registrationLayout displayInfo=social.displayInfo displayWide=layout.showSocial; section>
+    <#if section = "header">
+        ${msg("doLogIn")}
+    <#elseif section = "form">
+    <div class="row">
+    <div id="kc-form"  class="${properties.kcFormClass!}" <#if realm.password && social.providers??>class="${properties.kcContentWrapperClass!}"</#if>>
+      <div id="kc-form-wrapper" <#if layout.showSocial >class=""<#else>class=""</#if>>
+        <#if realm.password>
+           <div class="form-rect">
+           <p>&nbsp;</p>
+           <div class="${properties.loginHeadingClass!}">
+                           <h2 class="mb-4">${msg("doLogIn")}</h2></div>
+            <form id="kc-form-login" onsubmit="login.disabled = true; return true;" action="${url.loginAction}" method="post" >
+                <div class="${properties.kcFormGroupClass!}">
+                    <label for="username" class="${properties.kcLabelClass!}"><#if !realm.loginWithEmailAllowed>${msg("username")}<#elseif !realm.registrationEmailAsUsername>${msg("usernameOrEmail")}<#else>${msg("email")}</#if></label>
+
+                    <#if usernameEditDisabled??>
+                        <input tabindex="1" id="username" class="${properties.kcInputClass!} rect" name="username" value="${(login.username!'')}" type="text" disabled placeholder="${msg("usernameOrEmail")}" />
+                    <#else>
+                        <input tabindex="1" id="username" class="${properties.kcInputClass!} rect" name="username" value="${(login.username!'')}"  type="text" autofocus autocomplete="off" placeholder="${msg("usernameOrEmail")}" />
+                    </#if>
+                </div>
+
+                <div class="${properties.kcFormGroupClass!}">
+
+                    <input tabindex="2" id="password" class="${properties.kcInputClass!} rect" name="password" type="password" autocomplete="off" placeholder="${msg("password")}"/>
+                </div>
+
+                <div class="${properties.kcFormGroupClass!} ${properties.kcFormSettingClass!}">
+                    <div id="kc-form-options">
+                        <#if realm.rememberMe && !usernameEditDisabled??>
+                            <div class="checkbox">
+                                <label>
+                                    <#if login.rememberMe??>
+                                        <input tabindex="3" id="rememberMe" name="rememberMe" type="checkbox" checked> ${msg("rememberMe")}
+                                    <#else>
+                                        <input tabindex="3" id="rememberMe" name="rememberMe" type="checkbox"> ${msg("rememberMe")}
+                                    </#if>
+                                </label>
+                            </div>
+                        </#if>
+                        </div>
+
+
+                  </div>
+
+                  <div id="kc-form-buttons" class="${properties.kcFormGroupClass!}">
+                    <input tabindex="4" class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonBlockClass!} ${properties.kcButtonLargeClass!}" name="login" id="kc-login" type="submit" value="${msg("doLogIn")}"/>
+                  </div>
+            </form>
+             <div class="${properties.kcFormOptionsWrapperClass!}">
+                                                        <#if realm.resetPasswordAllowed>
+                                                            <span><a tabindex="5" href="${url.loginResetCredentialsUrl}">${msg("doForgotPassword")}</a></span>
+                                                        </#if>
+                                                    </div>
+            <div class="${properties.loginHeadingClass!}">
+
+                <p> ${msg("newHere")} <a href="/registrierung">${msg("doRegister")}</a></p>
+                <p>&nbsp;</p>
+             </div>
+            </div>
+
+        <#if properties.oodFooterLinks?has_content>
+          <ul class="list-inline">
+            <#list properties.oodFooterLinks?split(properties.oodFooterLinksDelimiter) as footerLink>
+              <li><a href="${footerLink?split(properties.oodFooterLinkDelimiter)[1]}">${footerLink?split(properties.oodFooterLinkDelimiter)[0]}</a></li>
+            </#list>
+          </ul>
+        </#if>
+        </#if><#-- <#if realm.password> -->
+	  </div>
+        <#if layout.showSocial>
+            <div id="kc-social-providers" class="${properties.kcFormSocialAccountContentClass!} ${properties.kcFormSocialAccountClass!}">
+                <ul class="${properties.kcFormSocialAccountListClass!} <#if social.providers?size gt 4>${properties.kcFormSocialAccountDoubleListClass!}</#if>">
+                    <#list social.providers as p>
+                        <li class="${properties.kcFormSocialAccountListLinkClass!}"><a href="${p.loginUrl}" id="zocial-${p.alias}" class="zocial ${p.providerId}"> <span>Log in with third party through ${p.displayName}</span></a></li>
+                        <#if p.alias = "cilogon">
+                            <div class="thumbnail" style="text-align: center;">
+                                <h4>Step 1. Choose your identity provider<br><small>CILogon provides access to identity providers from many academic institutions across the state.</small></h4>
+                                <img class="img-rounded img-responsive center-block" alt="100%x200" src="${url.resourcesPath}/img/login1.png" style="display: block;"> or
+                                <img class="img-rounded img-responsive center-block" alt="100%x200" src="${url.resourcesPath}/img/login1_feb4.png" style="display: block;">
+                            </div>
+                            <div class="thumbnail">
+                                <h4 style="text-align: center;">Step 2. Login via your provider<br><small>For example, here I've chosen Ohio State University as my provider and am presented OSU's login page.</small></h4>
+                                <img class="img-rounded img-responsive center-block" data-src="holder.js/100%x200" alt="100%x200" src="${url.resourcesPath}/img/login2.png" style="display: block;">
+                            </div>
+                            <div class="thumbnail">
+                                <h4 style="text-align: center;">Step 3. Map it to your HPC account (first login only)<br>
+                                    <small>If it is the first time logging in with this provider, you will need to associate it with your HPC account.</small>
+                                </h4>
+                                <img class="img-rounded img-responsive center-block" data-src="holder.js/100%x200" alt="100%x200" src="${url.resourcesPath}/img/login3.png" style="display: block;">
+                            </div>
+                            <li class="${properties.kcFormSocialAccountListLinkClass!}"><a href="${p.loginUrl}" id="zocial-${p.alias}" class="zocial ${p.providerId}"> <span>Log in with third party through ${p.displayName}</span></a></li>
+                        </#if>
+                    </#list>
+                </ul>
+            </div>
+	    </#if>
+      </div>
+    </div>
+    <div class="col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3">${msg("footer")?no_esc}</div>
+    <#elseif section = "info" >
+        <#if realm.password && realm.registrationAllowed && !usernameEditDisabled??>
+            <div id="kc-registration">
+                <span>${msg("noAccount")} <a tabindex="6" href="${url.registrationUrl}">${msg("doRegister")}</a></span>
+            </div>
+        </#if>
+    </#if>
+
+</@layout.registrationLayout>
