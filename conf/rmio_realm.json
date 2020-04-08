@@ -1073,7 +1073,17 @@
     "xXSSProtection" : "1; mode=block",
     "strictTransportSecurity" : "max-age=31536000; includeSubDomains"
   },
-  "smtpServer" : { },
+  "smtpServer" : {
+    "password" : "",
+    "starttls" : "true",
+    "auth" : "false",
+    "port" : "465",
+    "host" : "email-smtp.eu-central-1.amazonaws.com",
+    "from" : "no-reply@remedymatch.io",
+    "fromDisplayName" : "RemedyMatch.io",
+    "ssl" : "true",
+    "user" : ""
+  },
   "loginTheme" : "rmtheme",
   "emailTheme" : "rmtheme",
   "eventsEnabled" : false,
