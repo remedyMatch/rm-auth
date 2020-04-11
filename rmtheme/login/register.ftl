@@ -7,14 +7,11 @@
                 <div class="col-lg-6">
                     <div class="card" id="register-info-card">
                         <div class="card-body">
-                            <h4>Hinweis</h4>
+                            <h4>${msg("disclaimerTitle")}</h4>
 
-                            <p>Deine Daten bleiben bis zu einem Match
-                                anonymisiert. Es
-                                wird nur die Stadt in der Übersicht angezeigt, um regionale Matches zu
-                                vereinfachen.</p>
+                            <p>${msg("disclaimer")}</p>
                             <p>
-                                <span id="registration-intro" class="btn btn-success btn-lg btn-block">Registrierung starten</span>
+                                <span id="registration-intro" class="btn btn-success btn-lg btn-block">${msg("startRegistration")}</span>
                             </p>
                         </div>
                     </div>
@@ -27,36 +24,33 @@
                                     <div class="inner">
                                         <div class="form-content">
                                             <div class="form-header">
-                                                <h3 style="color:#000;">Persönliche Daten</h3>
+                                                <h3 style="color:#000;">${msg("headerPersonal")}</h3>
                                             </div>
                                             <div class="form-row">
                                                 <div class="col form-group">
-                                                    <label for="account-type">Sind sie eine Organisation?</label>
+                                                    <label for="account-type">${msg("companyQuestion")}</label>
                                                     <select id="account-type" name="account-type"
                                                             class="required form-control">
-                                                        <option value="2">Nein</option>
-                                                        <option value="1">Ja</option>
+                                                        <option value="2">${msg("doNo")}</option>
+                                                        <option value="1">${msg("doYes")}</option>
                                                     </select>
                                                 </div>
                                             </div>
                                             <div id="organisation-wrapper">
                                                 <div class="form-row">
                                                     <div class="col form-group">
-                                                        <label for="company">Bezeichnung der Organisation</label>
-                                                        <input type="text" placeholder="Organisation" id="user.attributes.company"
+                                                        <label for="company">${msg("companyName")}</label>
+                                                        <input type="text" placeholder="${msg("companyName")}" id="user.attributes.company"
                                                                name="company" class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="form-row">
                                                     <div class="col form-group">
-                                                        <label for="type">Art der Organisation (Selbst eingeben oder
-                                                            auswählen)</label>
+                                                        <label for="type">${msg("companyType")}</label>
                                                         <input name="type" id="user.attributes.type"
                                                                list="type_list"
                                                                class="form-control" autocomplete="none">
                                                         <datalist id="type_list" autocomplete="off">
-
-                                                                <option></option>
 
                                                         </datalist>
                                                     </div>
@@ -93,45 +87,45 @@
                                     <div class="inner">
                                         <div class="form-content">
                                             <div class="form-header">
-                                                <h3 style="color:#000;">Kontaktinformationen</h3>
+                                                <h3 style="color:#000;">${msg("headerContact")}</h3>
                                             </div>
                                             <div class="form-row">
                                                 <div class="col-9 form-group">
-                                                    <label for="street">Straße oder Postfach</label>
+                                                    <label for="street">${msg("street")}</label>
                                                     <input type="text" id="user.attributes.street" name="user.attributes.street"
-                                                           placeholder="Straße"
+                                                           placeholder="${msg("street")}"
                                                            class="form-control required">
                                                 </div>
                                                 <div class="col-3 form-group">
                                                     <label for="housenumber">&nbsp;</label>
                                                     <input type="text" id="user.attributes.housenumber" name="user.attributes.housenumber" maxlength="5"
-                                                           placeholder="Nr." class="form-control required">
+                                                           placeholder="${msg("housenumber")}" class="form-control required">
                                                 </div>
                                             </div>
                                             <div class="form-row">
                                                 <div class="col-12 form-group">
-                                                    <label for="zipcode">Postleitzahl</label>
-                                                    <input type="text" placeholder="PLZ" name="user.attributes.zipcode" id="user.attributes.zipcode" maxlength="5"
+                                                    <label for="zipcode">${msg("postal_code")}</label>
+                                                    <input type="text" placeholder="${msg("postal_code")}" name="user.attributes.zipcode" id="user.attributes.zipcode" maxlength="5"
                                                            class="form-control required">
                                                 </div>
 
                                             </div>
                                             <div class="form-row">
                                                 <div class="col-12 form-group">
-                                                    <label for="city">Stadt</label>
-                                                    <input type="text" id="user.attributes.city" name="user.attributes.city" placeholder="Stadt"
+                                                    <label for="city">${msg("locality")}</label>
+                                                    <input type="text" id="user.attributes.city" name="user.attributes.city" placeholder="${msg("locality")}"
                                                            class="form-control required">
                                                 </div>
                                             </div>
                                             <div class="form-row">
                                                 <div class="form-group col-md-12">
-                                                    <label for="phone">Telefonnummer</label>
+                                                    <label for="phone">${msg("telephonenumber")}</label>
                                                     <div class="input-group">
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="basic-addon1">+49</span>
                                                     </div>
                                                     <input type="text" id="user.attributes.phone" name="user.attributes.phone" maxlength="15"
-                                                           placeholder="Telefonnummer (Mobil oder Festnetz)"
+                                                           placeholder="${msg("telephonenumber")}"
                                                            class="form-control required">
                                                     </div>
                                                 </div>
@@ -147,13 +141,13 @@
                                     <div class="inner">
                                         <div class="form-content">
                                             <div class="form-header">
-                                                <h3 style="color:#000;">Kennwort festlegen</h3>
+                                                <h3 style="color:#000;">${msg("headerPassword")}</h3>
                                             </div>
                                             <div class="form-row">
                                                 <div class="col form-group">
-                                                    <label for="password">Passwort</label>
+                                                    <label for="password">${msg("password")}</label>
                                                     <input type="password" id="password" name="password"
-                                                           placeholder="Passwort"
+                                                           placeholder="${msg("password")}"
                                                            class="form-control required"
                                                            onKeyUp="checkPasswordStrength();">
                                                     <div id="password-strength-status"></div>
@@ -161,9 +155,9 @@
                                             </div>
                                             <div class="form-row">
                                                 <div class="col form-group">
-                                                    <label for="confirm">Passwort wiederholen</label>
+                                                    <label for="confirm">${msg("passwordConfirm")}</label>
                                                     <input type="password" id="password-confirm" name="password-confirm"
-                                                           placeholder="Passwort wiederholen"
+                                                           placeholder="${msg("passwordConfirm")}"
                                                            class="form-control required"
                                                            onKeyUp="checkPasswordConfirm();">
                                                     <div id="password-correct"></div>
@@ -173,10 +167,8 @@
                                                 <div class="form-group form-check">
 
                                                     <label class="form-check-label" for="acceptTerms">Mit dem
-                                                        Absenden des
-                                                        Formulars stimmen Sie unseren AGB und der
-                                                        Datenschutzerklärung
-                                                        zu.</label>
+                                                        ${msg("dataprotection")}
+                                                        </label>
                                                 </div>
                                             </div>
                                         </div>
@@ -231,7 +223,7 @@
 
                         return false;
                     }
-                }, "Keine gültige Telefonnummer");
+                }, '${msg("erroTelephonenumber")}');
 
                 $.validator.addMethod('zipcodeCheck', function (value, element) {
                     var regex = /^[0-9]{5}$/
@@ -244,10 +236,10 @@
                     }
 
 
-                }, "Keine gültige Postleitzahl");
+                }, '${msg("errorPostalcode")}');
 
-                $.validator.messages.required = 'Leeres Feld nicht möglich';
-                $.validator.messages.email = 'Gib eine gültige Email ein';
+                $.validator.messages.required = '${msg("errorFields")}';
+                $.validator.messages.email = '${msg("invalidEmailMessage")}';
                 $.validator.setDefaults({
                     highlight: function (element) {
                         $(element).closest('.form-group').find(".form-control:first").addClass('is-invalid');
@@ -282,9 +274,9 @@
                     transitionEffect: "fade",
                     transitionEffectSpeed: 300,
                     labels: {
-                        finish: "Kostenlos registrieren",
-                        next: "Weiter",
-                        previous: "Zurück"
+                        finish: "${msg('doRegister')}",
+                        next: "${msg('doContinue')}",
+                        previous: "${msg('doBack')}"
                     },
                     onInit: function (event, currentIndex) {
                         $('.actions ul li a').addClass('btn btn-primary btn-lg');
@@ -349,7 +341,7 @@
                 if ($('#password').val().length < 6) {
                     $('#password-strength-status').removeClass();
                     $('#password-strength-status').addClass('weak-password');
-                    $('#password-strength-status').html("Passwort muss mindestens 6 Zeichen lang sein.");
+                    $('#password-strength-status').html("${kcSanitize(msg('invalidPasswordMinLengthMessage',('6')))?no_esc}");
                     $('#password').removeClass();
                     $('#password').addClass('form-control is-invalid');
                     $('#password').focus();
@@ -365,7 +357,7 @@
                     } else {
                         $('#password-strength-status').removeClass();
                         $('#password-strength-status').addClass('medium-password');
-                        $('#password-strength-status').html("Das Passwort muss mindestens einen Buchstaben, eine Zahl und ein Sonderzeichen enthalten.");
+                        $('#password-strength-status').html("${msg('passwordRequiremtens')}");
                         $('#password').removeClass();
                         $('#password').addClass('form-control is-invalid');
                         $('#password').focus();
@@ -386,7 +378,7 @@
                 } else {
                     $('#password-correct').removeClass();
                     $('#password-correct').addClass('strong-password');
-                    $('#password-correct').html("Die Passwörter stimmen nicht überein.");
+                    $('#password-correct').html("${msg('notMatchPasswordMessage')}");
                     $('#confirm').removeClass();
                     $('#confirm').addClass('form-control is-invalid');
                     $('#confirm').focus();
