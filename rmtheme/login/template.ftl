@@ -41,6 +41,14 @@
                     document.title= " ${kcSanitize(msg("loginTitle",('Remedymatch')))?no_esc}";
                   } else if(window.location.href.includes("registration")){
                     document.title = "${kcSanitize(msg("registerWithTitle",('Remedymatch')))?no_esc}";
+                    var organisations= "${msg('organisations')}";
+                    var organisation = organisations.split(',');
+
+                    var options='';
+                    for(var i = 0; i < organisation.length; i++)
+                        options += '<option value="'+organisation[i]+'" />';
+
+                      document.getElementById('type_list').innerHTML = options;
                   } else if(window.location.href.includes("reset-credentials")){
                     document.title = "${msg("emailForgotTitle")}";
                   }
