@@ -14,7 +14,9 @@
             <meta name="${meta?split('==')[0]}" content="${meta?split('==')[1]}"/>
         </#list>
     </#if>
-    <title>${msg(properties.loginTitle)}</title>
+    <title>
+        ${kcSanitize(msg("registerWithTitle",('Remedymatch')))?no_esc}
+    </title>
     <link rel="icon" type="image/png" href="${url.resourcesPath}/img/favicon.png">
 
     <#if properties.styles?has_content>
@@ -72,7 +74,8 @@
    </#if>
   <div class="row">
     <div id="kc-header" <#if showSocial >class="${properties.kcSocialHeaderClass!}"<#else>class="${properties.kcHeaderClass}"</#if>>
-      <p><img src="${url.resourcesPath}/img/logo.png"></p>
+      <p><a href="/"><img src="${url.resourcesPath}/img/logo.png"></a></p>
+
       <div id="kc-header-wrapper" class="${properties.kcHeaderWrapperClass!}">
     </div>
     </div>

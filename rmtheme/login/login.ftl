@@ -9,6 +9,7 @@
         <#if realm.password>
            <div class="form-rect">
            <p>&nbsp;</p>
+
            <div class="${properties.loginHeadingClass!}">
                            <h2 class="mb-4">${msg("doLogIn")}</h2></div>
             <form id="kc-form-login" onsubmit="login.disabled = true; return true;" action="${url.loginAction}" method="post" >
@@ -56,7 +57,13 @@
                                                     </div>
             <div class="${properties.loginHeadingClass!}">
 
-                <p> ${msg("newHere")} <a href="/registrierung">${msg("doRegister")}</a></p>
+                <p>
+                           <#if realm.password && realm.registrationAllowed && !usernameEditDisabled??>
+                               <div id="kc-registration">
+                                   <span>${msg("noAccount")} <a tabindex="6" href="${url.registrationUrl}">${msg("doRegister")}</a></span>
+                               </div>
+                           </#if>
+                      </p>
                 <p>&nbsp;</p>
              </div>
             </div>
@@ -100,12 +107,6 @@
       </div>
     </div>
     <div class="col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3">${msg("footer")?no_esc}</div>
-    <#elseif section = "info" >
-        <#if realm.password && realm.registrationAllowed && !usernameEditDisabled??>
-            <div id="kc-registration">
-                <span>${msg("noAccount")} <a tabindex="6" href="${url.registrationUrl}">${msg("doRegister")}</a></span>
-            </div>
-        </#if>
-    </#if>
 
+</#if>
 </@layout.registrationLayout>
