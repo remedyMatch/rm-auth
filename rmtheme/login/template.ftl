@@ -15,7 +15,8 @@
         </#list>
     </#if>
     <title>
-        ${kcSanitize(msg("registerWithTitle",('Remedymatch')))?no_esc}
+       ${kcSanitize(msg("loginTitle",('Remedymatch')))?no_esc}
+
     </title>
     <link rel="icon" type="image/png" href="${url.resourcesPath}/img/favicon.png">
 
@@ -34,6 +35,18 @@
             <script src="${script}" type="text/javascript"></script>
         </#list>
     </#if>
+    <script>
+        window.addEventListener('load', function () {
+                  if (window.location.href.includes("openid-connect")){
+                    document.title= " ${kcSanitize(msg("loginTitle",('Remedymatch')))?no_esc}";
+                  } else if(window.location.href.includes("registration")){
+                    document.title = "${kcSanitize(msg("registerWithTitle",('Remedymatch')))?no_esc}";
+                  } else if(window.location.href.includes("reset-credentials")){
+                    document.title = "${msg("emailForgotTitle")}";
+                  }
+         });
+
+     </script>
 </head>
 
 <#if url.oauthAction?contains("first-broker-login")>
