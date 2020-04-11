@@ -166,7 +166,7 @@
                                             <div class="form-row">
                                                 <div class="form-group form-check">
 
-                                                    <label class="form-check-label" for="acceptTerms">Mit dem
+                                                    <label class="form-check-label" for="acceptTerms">
                                                         ${msg("dataprotection")}
                                                         </label>
                                                 </div>
