@@ -49,7 +49,7 @@ Es wird der `spring-cloud-gateway-client` angelegt.
 * Valid Redirect URIs: _*_
 * Access Token Lifespan: _1 Days_
 * Mapper GroupMapper (Mapper Type: _Group Membership_, Token Claim Name: _groups_)
-* Mapper Username (Mapper Type: _User Property_, Token Claim Name: _upn_)
+* Mapper Username (Mapper Type: _User Property_, Token Claim Name: _username_)
 
 
 ### Export Realm
