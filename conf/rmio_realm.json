@@ -415,7 +415,7 @@
     "id" : "79aeb8a5-333b-454f-a464-cb483a73a6cb",
     "createdTimestamp" : 1586876728933,
     "username" : "test_bedarf",
-    "enabled" : false,
+    "enabled" : true,
     "totp" : false,
     "emailVerified" : false,
     "firstName" : "Boris",
@@ -424,9 +424,9 @@
     "attributes" : {
       "zipcode" : [ "11011" ],
       "country" : [ "Deutsachland" ],
-      "phone" : [ "0202020202020202" ],
-      "city" : [ "Berlin" ],
       "housenumber" : [ "1" ],
+      "city" : [ "Berlin" ],
+      "phone" : [ "0202020202020202" ],
       "street" : [ "Platz der Republik" ],
       "status" : [ "FREIGEGEBEN" ]
     },
@@ -449,7 +449,7 @@
     "id" : "0f1830d8-a7f8-4ad5-8c8e-cd305804e62d",
     "createdTimestamp" : 1586876728685,
     "username" : "test_spender",
-    "enabled" : false,
+    "enabled" : true,
     "totp" : false,
     "emailVerified" : false,
     "firstName" : "Stefanie",
@@ -458,9 +458,9 @@
     "attributes" : {
       "zipcode" : [ "10969" ],
       "country" : [ "Deutsachland" ],
+      "phone" : [ "01010101010101" ],
       "housenumber" : [ "1" ],
       "city" : [ "Berlin" ],
-      "phone" : [ "01010101010101" ],
       "street" : [ "Friedrichstraße" ],
       "status" : [ "FREIGEGEBEN" ]
     },
@@ -737,6 +737,20 @@
         "access.token.claim" : "true",
         "claim.name" : "groups",
         "userinfo.token.claim" : "true"
+      }
+    }, {
+      "id" : "16ebdc80-7ce7-48e8-91a2-da7a62552fa6",
+      "name" : "UsernameMapper",
+      "protocol" : "openid-connect",
+      "protocolMapper" : "oidc-usermodel-property-mapper",
+      "consentRequired" : false,
+      "config" : {
+        "userinfo.token.claim" : "true",
+        "user.attribute" : "username",
+        "id.token.claim" : "true",
+        "access.token.claim" : "true",
+        "claim.name" : "username",
+        "jsonType.label" : "String"
       }
     } ],
     "defaultClientScopes" : [ "web-origins", "role_list", "roles", "profile", "email" ],
