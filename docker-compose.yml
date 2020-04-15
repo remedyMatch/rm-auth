@@ -23,7 +23,7 @@ services:
         DB_SCHEMA: public
         DB_PASSWORD: password
         KEYCLOAK_USER: admin
-        KEYCLOAK_PASSWORD: Pa55w0rd
+        KEYCLOAK_PASSWORD: admin
         KEYCLOAK_IMPORT: /tmp/keycloak-conf/rmio_realm.json
       ports:
         - 8090:8080

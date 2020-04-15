@@ -11,7 +11,7 @@ Als Auth-Service dient Keycloak. Keycloak ist eine Open Source Identity und Acce
 
 * `docker-compose up` im Stammverzeichnis ausführen.
 * http://localhost:8090/auth/ aufrufen.
-* Login als Admin möglich. Credentials sind in den Umgebungsvariablen in der Datei `docker-compose.yml` definiert.
+* Login als Admin möglich. Login mit Username `admin` Passwort: `admin`
 
 ### Anmerkungen
 
@@ -23,9 +23,9 @@ Dieser enthält bereits folgende Settings:
 
 Es werden folgende Demo User angelegt:
 
-* `test_bedarf` Passwort: `G3h31m` Test User um Bedarf zu testen
+* `bedarf` Passwort: `demo` Test User um Bedarf zu testen
 
-* `test_spender` Passwort: `G3h31m` Test User um Spenden zu testen
+* `spender` Passwort: `demo` Test User um Spenden zu testen
 
 #### Gruppen
 
@@ -56,4 +56,4 @@ Es wird der `spring-cloud-gateway-client` angelegt.
 
 Folgendes Statement exportiert den Realm _rmio_ in die Datei `./conf/rmio_realm.json`. Das Statement muss bei laufendem Service abgesetzt werden.
 
-`docker exec -it rm-auth_keycloak_1 /opt/jboss/keycloak/bin/standalone.sh -Djboss.socket.binding.port-offset=100 -Dkeycloak.migration.action=export -Dkeycloak.migration.provider=singleFile -Dkeycloak.migration.realmName=rmio -Dkeycloak.migration.usersExportStrategy=REALM_FILE -Dkeycloak.migration.file=/tmp/keycloak-conf/rmio_realm.jso`
+`docker exec -it rm-auth_keycloak_1 /opt/jboss/keycloak/bin/standalone.sh -Djboss.socket.binding.port-offset=100 -Dkeycloak.migration.action=export -Dkeycloak.migration.provider=singleFile -Dkeycloak.migration.realmName=rmio -Dkeycloak.migration.usersExportStrategy=REALM_FILE -Dkeycloak.migration.file=/tmp/keycloak-conf/rmio_realm.json`
