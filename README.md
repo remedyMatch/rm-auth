@@ -54,6 +54,8 @@ Es wird der `spring-cloud-gateway-client` angelegt.
 
 ### Export Realm
 
-Folgendes Statement exportiert den Realm _rmio_ in die Datei `./conf/rmio_realm.json`. Das Statement muss bei laufendem Service abgesetzt werden.
+Folgendes Statement exportiert den Realm _rmio_ und seine User in das als Volume gemountete Verzeichnis `./conf/`. In der Datei `rmio_realm.json` ist der Realm, in `rmio_users-0.json` die User enthalten.
 
-`docker exec -it rm-auth_keycloak_1 /opt/jboss/keycloak/bin/standalone.sh -Djboss.socket.binding.port-offset=100 -Dkeycloak.migration.action=export -Dkeycloak.migration.provider=singleFile -Dkeycloak.migration.realmName=rmio -Dkeycloak.migration.usersExportStrategy=REALM_FILE -Dkeycloak.migration.file=/tmp/keycloak-conf/rmio_realm.json`
+`docker exec -it rm-auth_keycloak_1 /opt/jboss/keycloak/bin/standalone.sh -Djboss.socket.binding.port-offset=100 -Dkeycloak.migration.action=export -Dkeycloak.migration.provider=dir -Dkeycloak.migration.realmName=rmio -Dkeycloak.migration.usersExportStrategy=SAME_FILE -Dkeycloak.migration.dir=/tmp/keycloak-conf/`
+
+Das Statement muss auf eine laufende Instanz von Keycloak abgesetzt werden und startet den Keycloak mit Port-Offset nur für den Export erneut. Nach vollständigem Start kann diese Instanz wieder beendet werden.
