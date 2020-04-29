@@ -26,36 +26,7 @@
                                             <div class="form-header">
                                                 <h3 style="color:#000;">${msg("headerPersonal")}</h3>
                                             </div>
-                                            <div class="form-row">
-                                                <div class="col form-group">
-                                                    <label for="account-type">${msg("companyQuestion")}</label>
-                                                    <select id="account-type" name="account-type"
-                                                            class="required form-control">
-                                                        <option value="2">${msg("doNo")}</option>
-                                                        <option value="1">${msg("doYes")}</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div id="organisation-wrapper">
-                                                <div class="form-row">
-                                                    <div class="col form-group">
-                                                        <label for="company">${msg("companyName")}</label>
-                                                        <input type="text" placeholder="${msg("companyName")}" id="user.attributes.company"
-                                                               name="company" class="form-control">
-                                                    </div>
-                                                </div>
-                                                <div class="form-row">
-                                                    <div class="col form-group">
-                                                        <label for="type">${msg("companyType")}</label>
-                                                        <input name="type" id="user.attributes.type"
-                                                               list="type_list"
-                                                               class="form-control" autocomplete="none">
-                                                        <datalist id="type_list" autocomplete="off">
-
-                                                        </datalist>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            
                                             <div class="form-row">
                                                 <div class="form-group col-md-6">
                                                     <label for="firstname">${msg("firstName")}</label>
