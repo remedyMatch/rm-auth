@@ -53,7 +53,54 @@
       "clientRole" : false,
       "containerId" : "rmio",
       "attributes" : { }
-    } ],
+    },
+      {
+        "id" : "b2bdba8c-79f3-485e-9dab-485fa445ff88",
+        "name" : "spender",
+        "description" : "Donor role",
+        "composite" : false,
+        "clientRole" : false,
+        "containerId" : "rmio",
+        "attributes" : { }
+      },
+      {
+        "id" : "b2bdba8c-79f3-485e-9dab-485fa445ff89",
+        "name" : "empfänger",
+        "description" : "Receiver role",
+        "composite" : false,
+        "clientRole" : false,
+        "containerId" : "rmio",
+        "attributes" : { }
+      },
+      {
+        "id" : "b2bdba8c-79f3-485e-9dab-485fa445ff8a",
+        "name" : "institutionFreigeber",
+        "description" : "Institute approver role",
+        "composite" : false,
+        "clientRole" : false,
+        "containerId" : "rmio",
+        "attributes" : { }
+      },
+
+      {
+        "id" : "b2bdba8c-79f3-485e-9dab-485fa445ff8b",
+        "name" : "institutionAdmin",
+        "description" : "Institute admin role",
+        "composite" : false,
+        "clientRole" : false,
+        "containerId" : "rmio",
+        "attributes" : { }
+      },
+      {
+        "id" : "b2bdba8c-79f3-485e-9dab-485fa445ff8c",
+        "name" : "rolleFreigeben",
+        "description" : "Role approver role",
+        "composite" : false,
+        "clientRole" : false,
+        "containerId" : "rmio",
+        "attributes" : { }
+      }
+    ],
     "client" : {
       "realm-management" : [ {
         "id" : "0a60b2fb-fe3b-49ce-af51-ef84305580ae",
@@ -330,7 +377,11 @@
     "clientRoles" : { },
     "subGroups" : [ ]
   } ],
-  "defaultRoles" : [ "offline_access", "uma_authorization" ],
+  "defaultRoles": [
+    "spender",
+    "offline_access",
+    "uma_authorization"
+  ],
   "requiredCredentials" : [ "password" ],
   "otpPolicyType" : "totp",
   "otpPolicyAlgorithm" : "HmacSHA1",
