@@ -56,7 +56,7 @@
     },
       {
         "id" : "b2bdba8c-79f3-485e-9dab-485fa445ff88",
-        "name" : "spender",
+        "name" : "SPENDER",
         "description" : "Donor role",
         "composite" : false,
         "clientRole" : false,
@@ -65,7 +65,7 @@
       },
       {
         "id" : "b2bdba8c-79f3-485e-9dab-485fa445ff89",
-        "name" : "empfänger",
+        "name" : "EMPFAENGER",
         "description" : "Receiver role",
         "composite" : false,
         "clientRole" : false,
@@ -74,7 +74,7 @@
       },
       {
         "id" : "b2bdba8c-79f3-485e-9dab-485fa445ff8a",
-        "name" : "institutionFreigeber",
+        "name" : "FREIGEBER",
         "description" : "Institute approver role",
         "composite" : false,
         "clientRole" : false,
@@ -84,7 +84,7 @@
 
       {
         "id" : "b2bdba8c-79f3-485e-9dab-485fa445ff8b",
-        "name" : "institutionAdmin",
+        "name" : "INSTITUTION_OWNER",
         "description" : "Institute admin role",
         "composite" : false,
         "clientRole" : false,
@@ -378,9 +378,12 @@
     "subGroups" : [ ]
   } ],
   "defaultRoles": [
-    "spender",
+    "SPENDER",
     "offline_access",
     "uma_authorization"
+  ],
+  "defaultGroups": [
+    "/neu"
   ],
   "requiredCredentials" : [ "password" ],
   "otpPolicyType" : "totp",
@@ -438,12 +441,12 @@
     } ],
     "disableableCredentialTypes" : [ ],
     "requiredActions" : [ ],
-    "realmRoles" : [ "offline_access", "uma_authorization" ],
+    "realmRoles" : [ "offline_access", "uma_authorization", "EMPFAENGER" ],
     "clientRoles" : {
       "account" : [ "manage-account", "view-profile" ]
     },
     "notBefore" : 0,
-    "groups" : [ "/freigegeben" ]
+    "groups" : [ "/neu" ]
   }, {
     "id" : "da937552-8cc1-4e15-84ae-badd2d60e38b",
     "createdTimestamp" : 1586864019345,
@@ -524,12 +527,12 @@
     } ],
     "disableableCredentialTypes" : [ ],
     "requiredActions" : [ ],
-    "realmRoles" : [ "offline_access", "uma_authorization" ],
+    "realmRoles" : [ "offline_access", "uma_authorization", "SPENDER" ],
     "clientRoles" : {
       "account" : [ "manage-account", "view-profile" ]
     },
     "notBefore" : 0,
-    "groups" : [ "/freigegeben" ]
+    "groups" : [ "/neu" ]
   } ],
   "scopeMappings" : [ {
     "clientScope" : "offline_access",
