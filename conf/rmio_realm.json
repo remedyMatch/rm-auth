@@ -1277,7 +1277,9 @@
   "loginTheme" : "rmtheme",
   "emailTheme" : "rmtheme",
   "eventsEnabled" : false,
-  "eventsListeners" : [ "jboss-logging" ],
+  "eventsListeners": [
+    "rm_activate_event_listener"
+  ],
   "enabledEventTypes" : [ ],
   "adminEventsEnabled" : false,
   "adminEventsDetailsEnabled" : false,
