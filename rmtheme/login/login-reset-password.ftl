@@ -20,7 +20,7 @@
                 </div>
             </div>
 
-            <div class="${properties.kcFormGroupClassForgotPW!} col-8 offset-md-2 row">
+            <div class="${properties.kcFormGroupClassForgotPW!} ${properties.kcFormGroupClass}">
 
                     <div class="${properties.kcFormButtonsClass!}">
                         <span>
