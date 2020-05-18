@@ -93,7 +93,7 @@
       },
       {
         "id" : "b2bdba8c-79f3-485e-9dab-485fa445ff8c",
-        "name" : "rolleFreigeben",
+        "name" : "ROLLEFREIGEBER",
         "description" : "Role approver role",
         "composite" : false,
         "clientRole" : false,
