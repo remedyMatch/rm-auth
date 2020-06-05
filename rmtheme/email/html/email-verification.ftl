@@ -225,7 +225,7 @@
 </head>
 
 <body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #ffffff;">
-${kcSanitize(msg("emailVerificationBodyHtml",user.getLastName(),link, linkExpiration, realmName, linkExpirationFormatter(linkExpiration)))?no_esc}
+${kcSanitize(msg("emailVerificationBodyHtml",user.getLastName(),link,linkExpiration, linkExpirationFormatter(linkExpiration)))?no_esc}
 </body>
 </html>
 
